@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">LBC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='Home-Component'>Acceuil
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contenu sur mesure</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">OFFRES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Formations </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a routerLink="['cours-component']" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cours</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink='NewCourComponent'>Add cours</a>
+          <a class="dropdown-item" href="#">Search cour</a>
+          <a class="dropdown-item" href="#">Git / GitHub</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Anglais</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='cours-component'>Nous connaitre</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <h6 class="display-4">Quel que soit le secteur, TalentLBC offre la meilleure solution de formation.</h6>
+ 
+  <hr class="my-1">
+  <p>La meilleure partie est la relation amicale que nous entretenons avec le personnel de TalentLBC. 
+    Ils semblent disposés et capables de répondre à nos préoccupations de manière hautement collaborative, ce qui est très utile et rafraîchissant..</p>
+ 
+</div>
+<router-outlet></router-outlet>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">LBC.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+

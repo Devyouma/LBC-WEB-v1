@@ -1,0 +1,55 @@
+<h2><p class="text-info">Cours</p></h2>
+
+<form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+  
+  <div class="form-group">
+    <fieldset >
+      <input class="form-control"  type="text" name="keyword" ngModel placeholder="Search here..." id="CoursNameInput" >
+      <button type="submit" class="btn btn-primary">
+        Chercher
+      </button>
+    </fieldset>
+  </div>
+</form>
+<table *ngIf="cours" id="sidebar" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">IDC</th>
+      <th scope="col">C.N</th>
+      <th scope="col">Price</th>
+      <th scope="col">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of cours._embedded.cours">
+      <td>{{c.id}}</td>
+      <td>{{c.designation}}</td>
+      <td>${{c.price| number:'0.2'}}</td>
+      <td>{{c.note}}/10</td>
+      <td><a class="btn btn-danger" (click)="onDeleteCour(c)">Delete</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div>
+  <ul *ngIf='pages' class="pagination">
+    <li class="page-item active" class='clickable' [ngClass]="i==currentPage?'active':''"
+      *ngFor="let p of pages;let i=index">
+      <a class="page-link" (click)='onPageCour(i)'>{{i}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="card-deck">
+  <div class="card" *ngFor="let c of cours._embedded.cours">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{c.designation}}</h5>
+      <p class="card-text">Ce cour est note de {{c.note}}/10 par nos utilisateurs.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">${{c.price}}</small>
+    </div>
+  </div>
+</div>
